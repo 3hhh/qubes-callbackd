@@ -1,0 +1,11 @@
+[Unit]
+Description=Qubes OS event callback daemon
+Before=systemd-user-sessions.service
+After=qubesd.service
+
+[Service]
+Type=exec
+ExecStart=/usr/share/qubes-callbackd/callbackd.py
+
+[Install]
+WantedBy=multi-user.target
